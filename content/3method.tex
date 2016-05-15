@@ -4,9 +4,9 @@ consisting of a genotype, phenotype, and a mapping from genotype to phenotype.
 
 Encodings can generally be divided into two categories; direct and generative
 (or indirect). Generative encodings have several properties that lend themselves
-well to our problem domain. By using a genotype encoding that \textit{generates}
+well to our problem domain. By using a genotype encoding that \emph{generates}
 the phenotype, a single sub-structure in the genome can encode several similar
-sub-structures in phenotype. This makes it significantly easier to evolve
+sub-structures in the phenome. This makes it significantly easier to evolve
 individuals that have symmetry or repetition, but with variation --- such as
 chairs! While the Hornby study\cite{paper:ev4} uses Lindenmayer
 systems\cite{Hornby2003}, we thought it would be interesting to try a
@@ -14,10 +14,10 @@ neuroevolutionary approach.
 
 \subsection{Genetic Encoding}
 As suggested by Stanley\cite{Stanley2007}, and as Clune and
-Lipson\cite{Clune:2011:EOG:2078245.2078246} does, we consider the evolved CPPN's
+Lipson\cite{Clune:2011:EOG:2078245.2078246} does, we consider the evolved CPPNs
 to be a description of our phenotype, and query them with 3 Cartesian
 coordinates, representing a point in 3d space. The output of the network then
-determines the absence of presence of a voxel in that point, and hence whether
+determines the absence or presence of a voxel in that point, and hence whether
 that point will be part of the chair's design.
 
 This gives us a binary utility matrix representing a chair. To be able to render
@@ -31,9 +31,10 @@ which is computationally expensive.
 \subsection{Fitnesses}
 \subsection{Technologies (?)}
 
-A solution using the Unity3D\cite{web:unity} game engine has been built. This has been done by building on a collegues work with evolutionary algorithms, particularly a project porting SharpNeat\cite{web:unityneat} to the Unity gameengine\cite{web:sharpneat}. While this is not directly applicable to our solution it supplied us with a framework for setting up evolutionary algorithms.
+A solution using the Unity3D\cite{web:unity} game engine has been built. This has been done by building on a collegues work\cite{web:unityneat} with evolutionary algorithms, particularly a project porting SharpNeat\cite{web:sharpneat} to the Unity game engine.
+While this is not directly applicable to our solution it supplied us with a framework for setting up evolutionary algorithms.
 
-NEAT is short for neuro-evolution by augmenting topologies, its a technique which applies three key concepts to build complex neural networks, history, speciation and complexiation. First and foremost history is the 
+NEAT is short for neuro-evolution by augmenting topologies, it is a technique which applies three key concepts to build complex neural networks; history, speciation and complexiation. First and foremost history is the 
     
-\textbf{Unity} was an arbitrary choice. We could just as easily have chosen any other game engine which provided the same components - particularly physics and rendering, however Unity is used by thousands of people worldwide and has a lot of support provided by its active community which really works in favor of the engine.
+\textbf{Unity} was an arbitrary choice. We could just as easily have chosen any other game engine which provided the same components - particularly physics and rendering. However, Unity is used by thousands of people worldwide and has a lot of support provided by its active community which really works in favor of the engine.
 
