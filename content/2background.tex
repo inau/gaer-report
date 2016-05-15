@@ -8,7 +8,7 @@ CPPNs use function composition in an effort to obtain repetition, symmetry, and 
 An example of how composing functions can obtain multiple regularities can be seen on figure~\ref{fig:cppn}.
 \begin{figure}[ht]
 \centering
-\includegraphics[scale=.4]{cppn}
+\includegraphics[width=.9\columnwidth]{cppn}
 \caption{Composing two functions to obtain a single function which has multiple regularities \cite{Stanley2007}}
 \label{fig:cppn}
 \end{figure}
@@ -42,7 +42,7 @@ Some sort of IEC if of interest to our solution, since we would like to guide th
 
 \subsection{Evolving 3D objects with CPPNs}
 In their paper from 2011 Klune and Lipson describe how they use CPPNs to evolve 3-dimensional objects\cite{Clune:2011:EOG:2078245.2078246}.
-They describe how they encode the 3D objects with CPPNs by feeding the CPPN with three inputs, one each for the x-, y-, and z- coordinates of a 3D voxel space.
+They describe how they encode the 3D objects with CPPNs by feeding the CPPN with three inputs, one each for the x-, y-, and z-coordinates of a 3D voxel space.
 The single output of the CPPN for the given coordinates is checked against a threshold, and if it is above the threshold then the voxel in those coordinates is considered full, otherwise it is considered empty\cite[p.~5]{Clune:2011:EOG:2078245.2078246}.
 They combine this encoding with IEC to evolve symmetrical 3D images, see figure~\ref{fig:3dobjects}.
 \begin{figure}[ht]
