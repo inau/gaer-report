@@ -18,17 +18,50 @@ Lipson\cite{Clune:2011:EOG:2078245.2078246} does, we consider the evolved CPPNs
 to be a description of our phenotype, and query them with 3 Cartesian
 coordinates, representing a point in 3d space. The output of the network then
 determines the absence or presence of a voxel in that point, and hence whether
-that point will be part of the chair's design.
+that point will be part of the chair's design. A voxel is present in a point if
+the network outputs a vale larger than or equal to $0.5$ for that point.
 
 This gives us a binary utility matrix representing a chair. To be able to render
 and simulate physical experiments on it, we use the grassfire tranform, first
 introduced by Harry Blum\cite{blum67}, to find a single connected component (If
 there is more than one, we take the largest and discard the rest). We then
 "hollow out" the chair --- we remove all voxels that are completely surrounded by
-voxels. This is primarily to avoid representing them in the physics simulation,
+voxels. This is primarily to avoid representing them in the physical simulation,
 which is computationally expensive.
 
-\subsection{Fitnesses}
+\subsection{Evaluation}
+The evaluation(fitness) function determines the value of each individual, in
+each generation of the evolutionary experiment. For our fitness function we
+considered the use of several static analysis terms, physical experiments, and
+an interactive term.
+
+For the static term, we considered analysis of sitting-surface area and angle,
+but ended up relying on the physical simulation for this definition of
+"chairdness" instead. The only static term we used in the end is the number of
+voxels a chair consists of, corresponding to a measure of material cost.
+
+for the physical simulation, we wanted to measure stability, as well as
+viability as an object on which people can sit. In initial phases of the
+project, we performed the experiment by dropping a sphere on the chair, and then
+measuring the resulting rotation of the chair, the horizontal movement of the
+sphere, and the height in which the sphere came to rest. In later stages, we
+came to perform a similar experiment, but with a human rag doll. The rag doll
+gave us the same information as the sphere, but with added opportunity to
+measure a term for posture, by taking the vertical distance between the head and
+hips.
+
+The interactive term is used only conditionally. After evolving generations
+without interaction (we have experimented with one, tens and hundredths of
+generations between interaction), the user is allowed (but not forced) to select
+a single individual out of the ten best. Selected individuals are then
+remembered between generations, and their fitnesses artificially heightened,
+with a decay over time.
+
+For a phenome $p$, we concretely use the fitness function $F(P)$:
+$$F(p) = -(|V| + R_c + E_{\Delta} + E_{rest} + E_{posture} + I)$$
+
+Where $|V|$ is the number of voxels, approximating the material cost of the
+chair, $R_c$ is linear in 
 \subsection{Technologies (?)}
 
 A solution using the Unity3D\cite{web:unity} game engine has been built. This has been done by building on a collegues work\cite{web:unityneat} with evolutionary algorithms, particularly a project porting SharpNeat\cite{web:sharpneat} to the Unity game engine.
