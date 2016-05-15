@@ -61,7 +61,14 @@ For a phenome $p$, we concretely use the fitness function $F(P)$:
 $$F(p) = -(|V| + R_c + E_{\Delta} + E_{rest} + E_{posture} + I)$$
 
 Where $|V|$ is the number of voxels, approximating the material cost of the
-chair, $R_c$ is linear in 
+chair, $R_c$ is linear in the rotation of the chair after the rag doll
+drop-experiment. $E_{\Delta}$ is an exponential term in the horizontal travel
+distance of the rag doll (named Ethan), after the drop experiment. $E_{rest}$ is
+an exponential term in the vertical distance from the rag doll's hips, to ca.
+the middle of the chair, adjusted so that a chair carrying the rag doll above
+the middle is not penalised. $E_{posture}$ is a linear term corresponding to how
+far the rag doll's head is above his hips.
+
 \subsection{Technologies (?)}
 
 A solution using the Unity3D\cite{web:unity} game engine has been built. This has been done by building on a collegues work\cite{web:unityneat} with evolutionary algorithms, particularly a project porting SharpNeat\cite{web:sharpneat} to the Unity game engine.
