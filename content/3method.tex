@@ -10,10 +10,24 @@ sub-structures in phenotype. This makes it significantly easier to evolve
 individuals that have symmetry or repetition, but with variation --- such as
 chairs! While the Hornby study\cite{paper:ev4} uses Lindenmayer
 systems\cite{Hornby2003}, we thought it would be interesting to try a
-neuroevolutionary approach. \cite{Stanley2007} 
+neuroevolutionary approach.
 
-\subsection{Genome rep}
-\subsection{Geometric algorithms}
+\subsection{Genetic Encoding}
+As suggested by Stanley\cite{Stanley2007}, and as Clune and
+Lipson\cite{Clune:2011:EOG:2078245.2078246} does, we consider the evolved CPPN's
+to be a description of our phenotype, and query them with 3 Cartesian
+coordinates, representing a point in 3d space. The output of the network then
+determines the absence of presence of a voxel in that point, and hence whether
+that point will be part of the chair's design.
+
+This gives us a binary utility matrix representing a chair. To be able to render
+and simulate physical experiments on it, we use the grassfire tranform, first
+introduced by Harry Blum\cite{blum67}, to find a single connected component (If
+there is more than one, we take the largest and discard the rest). We then
+"hollow out" the chair --- we remove all voxels that are completely surrounded by
+voxels. This is primarily to avoid representing them in the physics simulation,
+which is computationally expensive.
+
 \subsection{Fitnesses}
 \subsection{Technologies (?)}
 
