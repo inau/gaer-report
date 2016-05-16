@@ -13,8 +13,8 @@ optimized towards a minimal voxel count which would not rotate when Ethan was
 dropped, see figure~\ref{fig:flat_object}.
 
 \begin{figure}[ht]
-%\includegraphics[width=.9\columnwidth]{footstool}
-\missingfigure{Pretty picture of flat mat goes here.}
+\centering
+\includegraphics[scale=.5]{flat_chair}
 \caption{The evolved object, pink, is simply a flat structure, such that it 
 does not rotate when Ethan is dropped on it, and has minimal voxel count.}
 \label{fig:flat_object}
@@ -42,4 +42,13 @@ Further experiments were conducted, where the mass of the individuals was
 adjusted according to their voxel count. In these experiments the EC ended up
 producing some individuals which were not just flat objects. Rather it 
 produced individuals as boxes on which Ethan could rest in a height such that
-the term $E_{rest}$ was minimized.
+the terms $E_{rest}$ and $E_\Delta$ were minimized, see 
+figure~\ref{fig:boxchair}.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=.9\columnwidth]{box_chair}
+\caption{When considering the mass of the individuals, such that more compact 
+individuals are more sturdy, the EC evolved a box upon which Ethan could rest.}
+\label{fig:boxchair}
+\end{figure}
