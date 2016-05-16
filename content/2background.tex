@@ -34,7 +34,7 @@ starting from simple ones''}\cite[p.~50]{Floreano2008}.
 
 The experiments carried out by Stanley and Miikkulainen show that NEAT 
 outperforms previous methods by upward a factor of 
-25\cite[p.~2]{stanley2002evolving}.
+25 on certain problems\cite[p.~2]{stanley2002evolving}.
 \subsection{Compositional Pattern Producing Networks}
 \label{sec:cppn}
 Compositional Pattern Producing Networks(CPPN) are a variation of regular ANNs 
@@ -45,8 +45,8 @@ regularities in the produced phenomes, see figure~\ref{fig:cppn}.
 \begin{figure}[ht]
 \centering
 \includegraphics[width=.9\columnwidth]{cppn}
-\caption{Composing two functions to obtain a single function which has multiple 
-regularities \cite{Stanley2007}}
+\caption{Composing a function which is symmetric with a periodic function 
+produces a function which is both symmetric and periodic \cite{Stanley2007}}
 \label{fig:cppn}
 \end{figure}
 
@@ -56,7 +56,7 @@ Specifically, where NEAT only operates with a network consisting of
 sigmoid-functions, CPPN-NEAT uses a range of different functions and chooses 
 one at random when a new node is introduced into the network.
 Furthermore, when determining if two individuals belong to the same species, 
-the difference in which activation functions their hidden nodes use is taken 
+the differences in which activation functions their hidden nodes use is taken 
 into consideration.
 
 CPPNs are of interest to our solution because of their symmetry producing 
