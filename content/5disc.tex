@@ -1,4 +1,11 @@
-\section{Discussion} \subsection{Unity Simulation Performance} In general the
+\section{Discussion}
+\subsection{Simulation Performance}
+Our experiments suffer from the computational cost of simulating physical
+experiments. To compensate for the time it takes to run these experiments, we
+run experiments for only a few hundredths of generations, or with small
+population sizes. \todo[inline]{and this is clearly bad}
+
+In general the
 simulations have performed quite horrible when having bigger populations. Some
 ideas to improve performance is restricting how objects collide. Either by
 creating layers matching the number of candidates in each generation or make
