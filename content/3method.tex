@@ -74,11 +74,20 @@ We tried many variations of the fitness function above; different scaling and
 curves for the different terms, and expressing $F$ as products instead of a
 sum, but none that gave significantly better chairs.
 
-\subsection{Technologies (?)}
+\subsection{Technologies}
 The evolutionary experiments were performed using the
 SharpNeat\cite{web:sharpneat} implementation of NEAT. Physics simulations were
-done in Unity3D\cite{web:unity}. To integrate the two, we used lordjesus' project, UnityNEAT\cite{web:unityneat}
+done in Unity3D\cite{web:unity}. To integrate the two, we used Daniel Jallovs project, UnityNEAT\cite{web:unityneat}.
+
+Jallov has done alot of the groundwork by porting a application of NEAT, SharpNeat\cite{web:sharpneat}, to the Unity3D game engine and setting up frameworks for describing evolutionary experiments\cite{web:unityneat}.
+
+The rationale for using  a game engine to realize  this project, besides 
+the fact that the majority of engines come with physics systems out of 
+the box, is the opportunity to render the candidates which makes interactive 
+evolution\cite{Woolley2014} easier to implement.
 
 Much work went into using the mostly undocumented SharpNeat and UnityNEAT
 projects, and for any consequent work, we would consider using a different
 technology stack.
+We tried many variations of the fitness function above, but none that
+gave significantly better chairs.
