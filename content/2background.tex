@@ -7,7 +7,7 @@ considered in order to come up with our solution.
 A popular example of using EC to solve problems with real-world
 morphology, is that of the space antennas developed by Gregory S.
 Hornby\cite{paper:ev4} (figure \ref{fig:nasa_antenna}). The antennas show how EC
-can reach solution that humans would be unlikely to explore.
+can reach solutions that humans would be unlikely to explore.
 
 \begin{figure}[ht] \includegraphics[scale=.7]{content/img/space_antenna}
 \caption{Image of the NASA Antenna \cite{paper:ev4}}
@@ -34,7 +34,7 @@ starting from simple ones''}\cite[p.~50]{Floreano2008}.
 
 The experiments carried out by Stanley and Miikkulainen show that NEAT 
 outperforms previous methods by upward a factor of 
-25\cite[p.~2]{stanley2002evolving}.
+25 on certain problems\cite[p.~2]{stanley2002evolving}.
 \subsection{Compositional Pattern Producing Networks}
 \label{sec:cppn}
 Compositional Pattern Producing Networks(CPPN) are a variation of regular ANNs 
@@ -45,8 +45,8 @@ regularities in the produced phenomes, see figure~\ref{fig:cppn}.
 \begin{figure}[ht]
 \centering
 \includegraphics[width=.9\columnwidth]{cppn}
-\caption{Composing two functions to obtain a single function which has multiple 
-regularities \cite{Stanley2007}}
+\caption{Composing a function which is symmetric with a periodic function 
+produces a function which is both symmetric and periodic \cite{Stanley2007}}
 \label{fig:cppn}
 \end{figure}
 
@@ -54,9 +54,9 @@ The evolution of CPPNs can be done using a method which is a variant of NEAT,
 CPPN-NEAT.
 Specifically, where NEAT only operates with a network consisting of 
 sigmoid-functions, CPPN-NEAT uses a range of different functions and chooses 
-one at random when a new node is introduces into the network.
+one at random when a new node is introduced into the network.
 Furthermore, when determining if two individuals belong to the same species, 
-the difference in which activation functions their hidden nodes use is taken 
+the differences in which activation functions their hidden nodes use is taken 
 into consideration.
 
 CPPNs are of interest to our solution because of their symmetry producing 
@@ -101,7 +101,7 @@ Some IEC is of interest to our solution, since we would like to guide the
 aesthetics of the designs our EC comes up with. 
 
 \subsection{Evolving 3D objects with CPPNs}
-In their paper from 2011 Klune and Lipson describe how they use CPPNs to evolve 
+In their paper from 2011 Clune and Lipson describe how they use CPPNs to evolve 
 3-dimensional objects\cite{Clune:2011:EOG:2078245.2078246}.
 They describe how they encode the 3D objects with CPPNs by feeding the CPPN 
 with three inputs, one each for the x-, y-, and z-coordinates of a 3D voxel 
