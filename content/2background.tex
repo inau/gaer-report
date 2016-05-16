@@ -1,13 +1,13 @@
-\section{Previous Work}
-The following section will outline some of the previous work which has been 
-considered in order to come up with our solution.
-\todo[inline]{Reformulate or scrap.}
+\section{Background}
+Much work has been done using EC to evolve morphologies. In the following
+sections we outline some of the publications that this project relies on, and
+was inspired by.
 
 \subsection{Computer aided Evolution}
 A popular example of using EC to solve problems with real-world
 morphology, is that of the space antennas developed by Gregory S.
-Hornby\cite{paper:ev4} (figure \ref{fig:nasa_antenna}). The antennas show how EC
-can reach solution that humans would be unlikely to explore.
+Hornby\cite{paper:ev4} (figure \ref{fig:nasa_antenna}). The antennas show that
+EC can reach solutions that it seems unlikely a human would explore.
 
 \begin{figure}[ht] \includegraphics[scale=.7]{content/img/space_antenna}
 \caption{Image of the NASA Antenna \cite{paper:ev4}}
@@ -49,11 +49,11 @@ regularities \cite{Stanley2007}}
 \label{fig:cppn}
 \end{figure}
 
-The evolution of CPPNs can be done using a method which is a variant of NEAT, 
+The evolution of CPPNs can be done using a variant of NEAT, 
 CPPN-NEAT.
 Specifically, where NEAT only operates with a network consisting of 
 sigmoid-functions, CPPN-NEAT uses a range of different functions and chooses 
-one at random when a new node is introduces into the network.
+one at random when a new node is introduced into the network.
 Furthermore, when determining if two individuals belong to the same species, 
 the difference in which activation functions their hidden nodes use is taken 
 into consideration.
@@ -66,51 +66,46 @@ properties.
 %the single output produced by the CPPN was used to colour the pixel at the 
 %given coordinate.
 
-\subsection{Computer evolved tables}
-\todo[inline]{Change this title?}
-Evolutionary Algorithms have been used to develop similar solutions before. 
-Examples of previous  applications are 
-tables[See~figure~\ref{fig:hornby_tables}] where the optimisation parameters 
-were height of the support structure, stability of the structure, and 
-maximization of surface area.
+\subsection{Generative Evolution of tables}
+Hornby evolved tables in 2006 (see~figure~\ref{fig:hornby_tables}), using
+generative encodings to to achieve reuse of similar sub-structures.
+In Hornby's study, the optimisation parameters were height of the support
+structure, stability of the structure, and maximization of surface area.
 \begin{figure}[ht]
 \includegraphics[scale=.6]{content/img/tables}
 \caption{Image of Hornby tables\cite{paper:ev4}}
 \label{fig:hornby_tables}
 \end{figure}
 
-While the evolution of tables has some similarities to seating they are 
-inherently
-different in the sense that maximized surface area might not be ideal for a
-chair.
-Neither would very high legs be optimal, since the physical attributes of humans
-usually constrain us to some specific height range which is optimal for the
-average persons seating comfort.
+While evolution of tables is similar to evolution of seating, they are
+inherently different in the sense that maximized surface area might not be ideal
+for a chair. Nor would very high legs be optimal, since the physical
+attributes of humans usually constrain us to some specific height range which is
+optimal for the average persons seating comfort.
 
 \subsection{Interactive Evolutionary Computation}
-Takagi describes in his survey from 2001\cite{Takagi2001} how there are some 
+Takagi describes in his survey from 2001\cite{Takagi2001}, how there are some 
 \emph{``systems whose optimization indexes are difficult to 
 specify''}\cite[p.~1275]{Takagi2001}.
-For such systems, which include systems whose evaluation is aesthetic in 
-nature, it is beneficial to use a human subject to evaluate the outcome of the 
-Evolutionary Computation(EC).
-This method is called Interactive Evolutionary Computation(IEC).
+For such systems it is beneficial to use a human subject to evaluate the outcome
+of the Evolutionary Computation(EC). This method is called Interactive
+Evolutionary Computation(IEC).
 
-Some IEC is of interest to our solution, since we would like to guide the 
-aesthetics of the designs our EC comes up with. 
+IEC is an ideal choice for furniture design, since the parameters of aesthetic
+design are \emph{very} difficult to specify.
 
 \subsection{Evolving 3D objects with CPPNs}
-In their paper from 2011 Klune and Lipson describe how they use CPPNs to evolve 
+In their paper from 2011 Clune and Lipson describe how they use CPPNs to evolve 
 3-dimensional objects\cite{Clune:2011:EOG:2078245.2078246}.
 They describe how they encode the 3D objects with CPPNs by feeding the CPPN 
-with three inputs, one each for the x-, y-, and z-coordinates of a 3D voxel 
-space.
-The single output of the CPPN for the given coordinates is checked against a 
-threshold, and if it is above the threshold then the voxel in those coordinates 
-is considered full, otherwise it is considered 
-empty\cite[p.~5]{Clune:2011:EOG:2078245.2078246}.
-They combine this encoding with IEC to evolve symmetrical 3D images, see 
-figure~\ref{fig:3dobjects}.
+with three inputs, one each for the dimensions in a 3 dimensional Euclidean
+voxel space.
+The single output of the CPPN for the given coordinates is checked against a
+threshold, and if it is above the threshold then the voxel in those coordinates
+is considered full, otherwise it is considered
+empty\cite[p.~5]{Clune:2011:EOG:2078245.2078246}. They combine this encoding
+with IEC to evolve symmetrical 3D images. Examples of the figures they evolved
+can be seen in figure~\ref{fig:3dobjects}.
 \begin{figure}[ht]
 \centering
 \includegraphics[width=.9\columnwidth]{3d_cppn}
