@@ -30,6 +30,7 @@ voxels. This is primarily to avoid representing them in the physical simulation,
 which is computationally expensive.
 
 \subsection{Evaluation}
+\label{sec:evaluation}
 The evaluation(fitness) function determines the value of each individual, in
 each generation of the evolutionary experiment. For our fitness function we
 considered the use of several static analysis terms, physical experiments, and
@@ -37,10 +38,10 @@ an interactive term.
 
 For the static term, we considered analysis of sitting-surface area and angle,
 but ended up relying on the physical simulation for this definition of
-"chairdness" instead. The only static term we used in the end is the number of
+"chairness" instead. The only static term we used in the end is the number of
 voxels a chair consists of, corresponding to a measure of material cost.
 
-for the physical simulation, we wanted to measure stability, as well as
+For the physical simulation, we wanted to measure stability, as well as
 viability as an object on which people can sit. In initial phases of the
 project, we performed the experiment by dropping a sphere on the chair, and then
 measuring the resulting rotation of the chair, the horizontal movement of the
@@ -57,7 +58,7 @@ a single individual out of the ten best. Selected individuals are then
 remembered between generations, and their fitnesses artificially heightened,
 with a decay over time.
 
-For a phenome $p$, we concretely use the fitness function $F(P)$:
+For a phenome $p$, we concretely use the fitness function $F(p)$:
 $$F(p) = \left|-(\left|V\right| + R_c + E_{\Delta} + E_{rest} + E_{posture} +
 I)\right|$$
 Where $|V|$ is the number of voxels, approximating the material cost of the
