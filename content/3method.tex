@@ -52,7 +52,7 @@ measure a term for posture, by taking the vertical distance between the head and
 hips.
 
 The interactive term is used only conditionally. After evolving generations
-without interaction (we have experimented with one, tens and hundredths of
+without interaction (we have experimented with one, tens, and hundredths of
 generations between interaction), the user is allowed (but not forced) to select
 a single individual out of the ten best. Selected individuals are then
 remembered between generations, and their fitnesses artificially heightened,
@@ -71,14 +71,31 @@ the middle is not penalised. $E_{posture}$ is a linear term corresponding to how
 far the rag doll's head is above his hips. Finally, $I$ is the term for
 interactive evolution.
 
-We tried many variations of the fitness function above, but none that
-gave significantly better chairs.
+We tried many variations of the fitness function above; different scaling and
+curves for the different terms, and expressing $F$ as products instead of a
+sum, but none that gave significantly better chairs.
 
+\subsection{Technologies}
+The evolutionary experiments were performed using the
+SharpNeat\cite{web:sharpneat} implementation of NEAT. Physics simulations were
+done in Unity3D\cite{web:unity}. To integrate the two, we used Daniel Jallovs project, UnityNEAT\cite{web:unityneat}.
 
-\subsection{Technologies (?)}
+Jallov has done alot of the groundwork by porting a application of NEAT, 
+SharpNeat\cite{web:sharpneat}, to the Unity3D game engine and 
+setting up a framework for describing evolutionary 
+experiments\cite{web:unityneat}.
 
-A solution using the Unity3D\cite{web:unity} game engine has been built. This has been done by building on a collegues work\cite{web:unityneat} with evolutionary algorithms, particularly a project porting SharpNeat\cite{web:sharpneat} to the Unity game engine.
-While this is not directly applicable to our solution it supplied us with a framework for setting up evolutionary algorithms.
-    
-\textbf{Unity} was an arbitrary choice. We could just as easily have chosen any other game engine which provided the same components - particularly physics and rendering. However, Unity is used by thousands of people worldwide and has a lot of support provided by its active community which really works in favor of the engine.
+The rationale for using  a game engine to realize  this project, besides 
+the fact that the majority of engines come with physics systems out of 
+the box, is the opportunity to render the candidates which makes interactive 
+evolution\cite{Takagi2001} easier to implement.
 
+Much work went into using the mostly undocumented SharpNeat and UnityNEAT
+projects, and for any consequent work, we would consider using a different
+technology stack.
+
+%However due to the physics engines being rather complex,  the 
+%tweaking of fitness function might have no effect since it relies on the 
+%interaction between the physics objects to be prroperly tweaked 
+%beforehand.
+%The above means that creating objects with proper mass compared to our rag doll also affects the outcome.
