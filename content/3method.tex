@@ -1,6 +1,6 @@
 \section{Evolving chairs using NEAT}
-To solve a problem using genetic algorithms, we need an encoding
-consisting of a genotype, phenotype, and a mapping from genotype to phenotype.
+To solve a problem using EC, we need an encoding consisting of a genotype,
+phenotype, and a mapping from genotype to phenotype.
 
 Encodings can generally be divided into two categories; direct and generative
 (or indirect). Generative encodings have several properties that lend themselves
@@ -25,7 +25,7 @@ This gives us a binary utility matrix representing a chair. To be able to render
 and simulate physical experiments on it, we use the grassfire tranform, first
 introduced by Harry Blum\cite{blum67}, to find a single connected component (If
 there is more than one, we take the largest and discard the rest). We then
-"hollow out" the chair --- we remove all voxels that are completely surrounded by
+"hollow out" the chair --- removing all voxels that are completely surrounded by
 voxels. This is primarily to avoid representing them in the physical simulation,
 which is computationally expensive.
 
@@ -59,8 +59,8 @@ remembered between generations, and their fitnesses artificially heightened,
 with a decay over time.
 
 For a phenome $p$, we concretely use the fitness function $F(p)$:
-$$F(p) = \left|-(\left|V\right| + R_c + E_{\Delta} + E_{rest} + E_{posture} +
-I)\right|$$
+$$F(p) = \Omega - (\left|V\right| + R_c + E_{\Delta} + E_{rest} + E_{posture} +
+I)$$
 Where $|V|$ is the number of voxels, approximating the material cost of the
 chair, $R_c$ is linear in the rotation of the chair after the rag doll
 drop-experiment. $E_{\Delta}$ is an exponential term in the horizontal travel
@@ -68,8 +68,10 @@ distance of the rag doll (named Ethan), after the drop experiment. $E_{rest}$ is
 an exponential term in the vertical distance from the rag doll's hips, to ca.
 the middle of the chair, adjusted so that a chair carrying the rag doll above
 the middle is not penalised. $E_{posture}$ is a linear term corresponding to how
-far the rag doll's head is above his hips. Finally, $I$ is the term for
-interactive evolution.
+far the rag doll's head is above his hips. $I$ is the term for
+interactive evolution. Finally, $\Omega$ is a term proportional to the maximum
+value of the remaining terms in $F$, and is used to ensure that higher values of
+$F(p)$ is better than lower ones.
 
 We tried many variations of the fitness function above; different scaling and
 curves for the different terms, and expressing $F$ as products instead of a
@@ -78,17 +80,11 @@ sum, but none that gave significantly better chairs.
 \subsection{Technologies}
 The evolutionary experiments were performed using the
 SharpNeat\cite{web:sharpneat} implementation of NEAT. Physics simulations were
-done in Unity3D\cite{web:unity}. To integrate the two, we used Daniel Jallovs project, UnityNEAT\cite{web:unityneat}.
+done in Unity3D\cite{web:unity}. To integrate the two, we used Daniel Jallovs
+project, UnityNEAT\cite{web:unityneat}.
 
-Jallov has done alot of the groundwork by porting a application of NEAT, 
-SharpNeat\cite{web:sharpneat}, to the Unity3D game engine and 
-setting up a framework for describing evolutionary 
-experiments\cite{web:unityneat}.
-
-The rationale for using  a game engine to realize  this project, besides 
-the fact that the majority of engines come with physics systems out of 
-the box, is the opportunity to render the candidates which makes interactive 
-evolution\cite{Takagi2001} easier to implement.
+Unity acts as both physics simulator, renderer, and graphical interface for IEC,
+and is as such the platform for our entire experiment.
 
 Much work went into using the mostly undocumented SharpNeat and UnityNEAT
 projects, and for any consequent work, we would consider using a different
