@@ -14,7 +14,7 @@ figure~\ref{fig:flat_object}.
 \begin{figure}[ht]
 \centering
 \includegraphics[scale=.5]{flat_chair}
-\caption{The evolved object, pink, is simply a flat structure, such that
+\caption{The evolved individual, pink, is simply a flat structure, such that
 it does not rotate when Ethan is dropped on it, and has minimal voxel
 count.} \label{fig:flat_object} \end{figure}
 
@@ -36,7 +36,7 @@ the aforementioned flat structure, see figure~\ref{fig:selection}.
 
 Further experiments were conducted, where the mass of the individuals was
 adjusted according to their voxel count. In these experiments the EC ended up
-producing some individuals which were not just flat objects. Rather it produced
+producing some individuals which were not just flat individuals. Rather it produced
 individuals as boxes on which Ethan could rest in a height such that the terms
 $E_{rest}$ and $E_\Delta$ were minimized, see figure~\ref{fig:boxchair}.
 
@@ -47,4 +47,69 @@ $E_{rest}$ and $E_\Delta$ were minimized, see figure~\ref{fig:boxchair}.
 	compact individuals are more sturdy, the EC evolved a box upon which
 	Ethan could rest.}
 	\label{fig:boxchair}
+\end{figure}
+
+\begin{figure}[ht]
+	\centering
+	\subfloat[]{
+		\includegraphics[width=.9\columnwidth]{basket}
+	} \hfil
+	\subfloat[]{
+		\includegraphics[width=.9\columnwidth]{basket2}
+	}
+	\caption{Basket like shapes that might have functioned as chairs, had
+	they had legs.}
+	\label{fig:baskets}
+\end{figure}
+
+During experiments with spheres, we saw some promising results. The mat- and
+tray-like shapes we had been seeing took on more basket-like shapes. We believe
+that with more generations, they might have started to grow in height ---
+perhaps with legs. Figure \ref{fig:baskets} depict some basket-like shapes.
+
+\begin{figure}[ht]
+	\centering
+	\subfloat[]{
+		\includegraphics[width=.9\columnwidth]{actual_chair}
+		\label{fig:real_chair}
+	} \hfil
+	\subfloat[]{
+		\includegraphics[height=70pt]{metro_stand}
+		\label{fig:metro_stand}
+	}
+	\caption{Viable chairs. While the topmost chair is nothing more than
+	viable, the bottom chair is a little surprising.}
+	\label{fig:viable_chairs}
+\end{figure}
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=.9\columnwidth]{metro_stand_real}
+	\caption{}
+	\label{fig:metro_stand_real}
+\end{figure}
+
+We did see some viable chairs --- individuals that a person could use for seating.
+Figure \ref{fig:viable_chairs} shows an example, not unlike a car seat. A more
+surprising result can be seen in figure \ref{fig:metro_stand}. The chair bares
+resemblance to the rests that can be found at metro platforms in Copenhagen, and
+is an interesting diversion from common shape morphologies. One can be seen in
+figure \ref{fig:metro_stand_real}. It is debatable whether an individual one leans
+on can be considered a chair, but it suits the fitness function.
+
+Some chair-like individuals were unfairly evaluated in simulation. Because the
+simulation of "sitting" is simplified, some individuals were missed or even
+toppled over in simulation. Figure \ref{fig:footstools} shows some chair-like
+individuals that ended up as strange footstools.
+
+\begin{figure}[ht]
+	\centering
+	\subfloat[]{
+		\includegraphics[width=.9\columnwidth, trim={170 70 0 20}, clip]{chair_flipover} } \hfil
+	\subfloat[]{
+		\includegraphics[width=.9\columnwidth]{footstool}
+	}
+	\caption{The simulation is not entirely loyal to reality. Viable chairs
+	might be deemed unfit because "sitting" is imperfectly simulated.}
+	\label{fig:footstools}
 \end{figure}
