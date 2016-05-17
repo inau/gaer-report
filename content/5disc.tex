@@ -1,13 +1,13 @@
 \section{Discussion}
-While our results are interesting in their own right, it is always prudent to 
+While our results are interesting in their own right, it is prudent to 
 consider what might have been done differently in order to obtain other results.
-\todo[inline]{more/better introduction}
 
 \subsection{Incremental Evolution}
 An approach to be considered is that of incremental evolution. Incremental
 evolution would have allowed us to focus on a subset of desired properties ,
 such as the desired height, or stability. Once a population had been evolved
-which fulfilled the desired properties, the fitness function could be modified
+which fulfilled the subset of desired properties, the fitness function could be 
+modified
 to add another property. 
 
 Using this approach it is plausible that we would have gotten better results,
@@ -15,10 +15,10 @@ as the individuals would not have to consider e.g. Ethan's posture, before they
 had evolved to an appropriate height.
 
 \subsection{Simulation Performance}
-Our experiments suffer from the computational cost of simulating physical
-experiments. To compensate for the time it takes to run these experiments, we
-run experiments for only a few hundredths of generations, or with small
-population sizes. This does not allow NEAT enough time, in the case of few 
+Our experiments suffered from the computational cost of simulating physical
+experiments. To compensate for the time it took to run these experiments, we
+ran experiments for only a few hundredths of generations, or with small
+population sizes. This did not allow NEAT enough time, in the case of few 
 generations, or lebensraum, in the case of small populations, to properly work.
 
 As mentioned in section \ref{sec:results} our population size was 50 for the 
@@ -51,5 +51,6 @@ instead had prompted the user every generation.
 It would also be interesting to try and combine the above mentioned approach
 with that of incremental evolution. First one could use only human evaluation
 to produce a population of individuals with interesting shapes. Then apply the
-static physical evaluation to evolve the desired physical properties, or vice
+static and physical evaluation to evolve the desired physical properties, or 
+vice
 versa.
