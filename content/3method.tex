@@ -59,8 +59,8 @@ remembered between generations, and their fitnesses artificially heightened,
 with a decay over time.
 
 For a phenome $p$, we concretely use the fitness function $F(p)$:
-$$F(p) = \Omega - (\left|V\right| * R_c * E_{\Delta} * E_{rest} * E_{posture} *
-I)$$
+$$F(p) = \Omega - (\left|V\right| * R_c * E_{\Delta} * E_{rest} * E_{posture})
++ I$$
 Where $|V|$ is the number of voxels, approximating the material cost of the
 chair, $R_c$ is linear in the rotation of the chair after the rag doll
 drop-experiment. $E_{\Delta}$ is an exponential term in the horizontal travel
