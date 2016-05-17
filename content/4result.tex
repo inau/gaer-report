@@ -10,11 +10,11 @@ Initially the experiments were carried out without the interactive term, $I$,
 and without regard for the mass of the individuals produced by the EC. This
 meant that the physical part of the evaluation, where Ethan was dropped on the
 individuals, resulted in the terms, $E_\Delta$, $E_{rest}$, and $E_{posture}$
-all being roughly equivalent between individuals. This happened because the 
-higher mass of Ethan would always result in the individuals being rotated and 
-Ethan dropping on the floor. This left only the $|V|$ and $R_c$ terms, and the 
-EC ultimately optimized towards a minimal voxel count which would not rotate 
-when Ethan was dropped, see figure~\ref{fig:flat_object}.
+all being roughly equivalent between individuals. This happened because the
+comparatively high mass of Ethan would always result in the individuals being
+rotated and Ethan dropping on the floor. This left only the $|V|$ and $R_c$
+terms, and the EC ultimately optimized towards a minimal voxel count which would
+not rotate when Ethan was dropped, see figure~\ref{fig:flat_object}.
 
 \begin{figure}[ht]
 \centering
@@ -58,7 +58,7 @@ $E_{rest}$ and $E_\Delta$ were minimized, see figure~\ref{fig:boxchair}.
 \begin{figure}[ht]
 	\centering
 	\subfloat[]{
-		\includegraphics[width=.9\columnwidth]{basket}
+		\includegraphics[height=130pt]{basket}
 	} \hfil
 	\subfloat[]{
 		\includegraphics[width=.9\columnwidth]{basket2}
@@ -68,39 +68,37 @@ $E_{rest}$ and $E_\Delta$ were minimized, see figure~\ref{fig:boxchair}.
 	\label{fig:baskets}
 \end{figure}
 
-Exchanging Ethan experiments with spheres, we saw some promising results. The 
-mat- and tray-like shapes we had been seeing took on more basket-like shapes. 
-We believe that with more generations, they might have started to grow in 
-height --- perhaps with legs. Figure \ref{fig:baskets} depict some basket-like 
-shapes.
+Exchanging Ethan experiments with spheres, we saw some promising results. The
+mat- and tray-like shapes we had been seeing took on more basket-like shapes,
+reminiscent of bean bag chairs. We believe that with more generations, they
+might have started to grow in height --- perhaps with legs. Figure
+\ref{fig:baskets} depicts some basket-like shapes.
 
 \begin{figure}[ht]
 	\centering
 	\subfloat[]{
-		\includegraphics[width=.45\columnwidth]{actual_chair}
+		\includegraphics[height=130pt]{actual_chair}
 		\label{fig:real_chair}
 	} \hfil
 	\subfloat[]{
-		\includegraphics[width=.45\columnwidth]{metro_stand2}
+		\includegraphics[height=110pt]{metro_stand}
+		\label{fig:metro_stand_real}
+	}
+	\subfloat[]{
+	\includegraphics[height=110pt]{metro_stand_real}
 		\label{fig:metro_stand}
 	}
-	\caption{Viable chairs. While the topmost chair is nothing more than
-	viable, the bottom chair is a little surprising.}
+	\caption{Two viable chairs. While the topmost chair is nothing more than
+	viable, the bottom-left chair is a little surprising. Bottom-right is a
+	photograph of the rests found at metro platforms in Copenhagen}
 	\label{fig:viable_chairs}
 \end{figure}
 
-\begin{figure}[ht]
-	\centering
-	\includegraphics[scale=1]{metro_stand_real}
-	\caption{A metro platform in Copenhagen with a rest stand (encircled)}
-	\label{fig:metro_stand_real}
-\end{figure}
-
 We did see some viable chairs --- individuals that a person could use for seating.
-Figure \ref{fig:viable_chairs} shows an example, not unlike a car seat. A more
+Figure \ref{fig:real_chair} shows an example, not unlike a car seat. A more
 surprising result can be seen in figure \ref{fig:metro_stand}. The chair bares
 resemblance to the rests that can be found at metro platforms in Copenhagen, and
-is an interesting diversion from common shape morphologies. An example of such 
+is an interesting diversion from common chair morphologies. An example of such 
 a rest can be seen in figure \ref{fig:metro_stand_real}. It is debatable 
 whether an individual one leans on can be considered a chair, but it suits the 
 fitness function.
@@ -108,16 +106,41 @@ fitness function.
 Some chair-like individuals were unfairly evaluated in simulation. Because the
 simulation of "sitting" is simplified, some individuals were missed or even
 toppled over in simulation. Figure \ref{fig:footstools} shows some chair-like
-individuals that ended up as strange footstools.
+individuals that ended up as strange footstools. Even the seat-like individual
+in figure \ref{fig:viable_chairs} is misjudged by Ethan not being able to sit up
+straight (although as one author commented; \emph{"That's how I sit"}).
 
 \begin{figure}[ht]
 	\centering
 	\subfloat[]{
-		\includegraphics[width=.9\columnwidth, trim={170 70 0 20}, clip]{chair_flipover} } \hfil
+		\includegraphics[width=0.4\columnwidth, trim={130 70 0 20}, clip]{chair_flipover} } \hfil
 	\subfloat[]{
-		\includegraphics[width=.9\columnwidth]{footstool}
+		\includegraphics[width=0.4\columnwidth, trim={30 0 0 0}, clip]{footstool}
 	}
 	\caption{The simulation is not entirely loyal to reality. Viable chairs
 	might be deemed unfit because "sitting" is imperfectly simulated.}
 	\label{fig:footstools}
 \end{figure}
+
+\begin{figure}[h]
+\centering
+\subfloat[]{
+	\includegraphics[width=.4\columnwidth, trim={80 0 80 60}, clip]{chair_leg}
+}
+\hfil
+\subfloat[]{
+	\includegraphics[width=.4\columnwidth, trim={80 20 80 40}, clip]{chair_leg2}
+}
+\caption{Asymmetric shapes, that may have evolved into chair legs}
+\label{fig:chair_legs}
+\end{figure}
+
+While we never saw individuals with a sitting-surface lifted up on legs, the
+experiments did evolve morphologies that might have become legs in later
+generations. The morphologies in figure \ref{fig:chair_legs} are asymmetric
+leg-like support structures. We believe they where selected for, because they
+provide momentary support for Ethan as he falls on it, until he falls to the
+side. As such, they may not have evolved as legs, but if arranged into a
+symmetric grid, they could have carried some of the viable chair morphologies we
+have seen, producing lower $E_{rest}$ terms in the evaluation of those
+individuals, and hence a higher fitness.

@@ -59,7 +59,7 @@ remembered between generations, and their fitnesses artificially heightened,
 with a decay over time.
 
 For a phenome $p$, we concretely use the fitness function $F(p)$:
-$$F(p) = \Omega - (\left|V\right| + R_c + E_{\Delta} + E_{rest} + E_{posture} +
+$$F(p) = \Omega - (\left|V\right| * R_c * E_{\Delta} * E_{rest} * E_{posture} *
 I)$$
 Where $|V|$ is the number of voxels, approximating the material cost of the
 chair, $R_c$ is linear in the rotation of the chair after the rag doll
@@ -74,8 +74,8 @@ value of the remaining terms in $F$, and is used to ensure that higher values of
 $F(p)$ is better than lower ones.
 
 We tried many variations of the fitness function above; different scaling and
-curves for the different terms, and expressing $F$ as products instead of a
-sum, but none that gave significantly better chairs.
+curves for the different terms, and expressing $F$ as a sum instead of
+products, but none that gave significantly better chairs.
 
 \subsection{Technologies}
 The evolutionary experiments were performed using the
