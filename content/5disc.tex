@@ -1,33 +1,51 @@
 \section{Discussion}
+While our results are interesting in their own right, it is always prudent to 
+consider what might have been done differently in order to obtain other results.
+\todo{more/better introduction}
+
+\subsection{Incremental Evolution}
+An approach to be considered is that of incremental evolution. Incremental 
+evolution would have allowed us to focus on one desired property at a time,
+such as the desired height, or stability. Once a population had been evolved
+which fulfilled the desired property, the fitness function could be modified to
+add another property. 
+
+Using this approach it is plausible that we would have gotten better results, 
+as the individuals would not have to consider Ethan's resting position, before 
+they had properly evolved to an appropriate height.
 \subsection{Simulation Performance}
 Our experiments suffer from the computational cost of simulating physical
 experiments. To compensate for the time it takes to run these experiments, we
 run experiments for only a few hundredths of generations, or with small
-population sizes. \todo[inline]{and this is clearly bad}
+population sizes. This does not allow NEAT enough time, in the case of few 
+generations, or space, in the case of low populations, to properly work.
 
-In general the
-simulations have performed quite horrible when having bigger populations. Some
-ideas to improve performance is restricting how objects collide. Either by
-creating layers matching the number of candidates in each generation or make
-friction of drop object and terrain rather high. Alternatively just remove any
-rigid body on the drop object when colliding with terrain. The latter might
-require some additional tweaks to the test arena ie. some cubes that elevate
-the candidates such that an rag doll sitting in a chair with feet planted not
-collides with the surrounding terrain but only that elevate area.
+As mentioned in section \ref{sec:results} our population size was 50 for the 
+experiments which only ran for a couple of hundred generations, and 10 when we 
+wanted the experiments to run for more generations.
+Given more time we would have liked to tweak the NEAT parameters, and not only 
+the evaluation function.
 
 \subsection{Rag Doll - Ethan}
-Looking at the results from the simulations it would have been very productive to be more
-thorough when generating the rag doll for testing.
-Especially when using the built-in tool in Unity, one should be very mindfull about which values are chosen for which extremities.
-Incorrect values can force the extremities to move irradically or make arms pop out from the hips and similar.
+While the idea to use a rag doll as part of the evaluation to evaluate the 
+"chairness" of the individuals is novel, we realised too late that the rag doll 
+we used in our simulations was not as flexible as first assumed.
 
-\subsection{Voxel Mass on Candidates} It has been quite troublesome to find a
-suitable weight for every voxel. Seing the fitness depends on whether the
-candidate has moved or rotated it is quite important to balance the mass of the
-drop test object in regards to the candidate objects mass, which varies alot
-based on morphology. While the current mass used, 0.015 per voxel, seems to
-provide structures of roughly 1/4 of the drop objects mass, we would suggest to
-perform additional studies to determine the ideal value. The current value was
-more or less chosen arbitrarly by trial-and-tweak until something which was not
-entirely unstable compared to our perception of how such physics objects should
-behave.
+Ethan did not bend in his hips and knees, resulting in him not being able to 
+actually sit down. This helps explain why the individuals which tried to 
+minimize the $E_{posture}$ term would evolve into shapes as seen on
+figures~\ref{fig:metro_stand}~\&~\ref{fig:chair_legs}. It would be nice to do 
+some more experiments where Ethan's flexibility more closely resembled that of 
+a human.
+
+\subsection{Interactive Evolutionary Computation}
+Our use of IEC differs from that used by Clune and 
+Lipson\cite{Clune:2011:EOG:2078245.2078246}, in that we only prompt the user 
+for input every few generations. In most of our experiments this was roughly 
+every tenth generations.It would be interesting to see what would happen if we 
+instead had prompted the user every generation. 
+
+It would also be interesting to try and combine the above mentioned approach 
+with that of incremental evolution. First one could use only human evaluation 
+to produce a population of individuals with interesting shapes. Then apply the 
+static physical evaluation to evolve the desired physical properties.
