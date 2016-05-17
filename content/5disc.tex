@@ -4,15 +4,16 @@ consider what might have been done differently in order to obtain other results.
 \todo{more/better introduction}
 
 \subsection{Incremental Evolution}
-An approach to be considered is that of incremental evolution. Incremental 
-evolution would have allowed us to focus on one desired property at a time,
+An approach to be considered is that of incremental evolution. Incremental
+evolution would have allowed us to focus on a subset of desired properties ,
 such as the desired height, or stability. Once a population had been evolved
-which fulfilled the desired property, the fitness function could be modified to
-add another property. 
+which fulfilled the desired properties, the fitness function could be modified
+to add another property. 
 
-Using this approach it is plausible that we would have gotten better results, 
-as the individuals would not have to consider Ethan's resting position, before 
-they had properly evolved to an appropriate height.
+Using this approach it is plausible that we would have gotten better results,
+as the individuals would not have to consider e.g. Ethan's posture, before they
+had evolved to an appropriate height.
+
 \subsection{Simulation Performance}
 Our experiments suffer from the computational cost of simulating physical
 experiments. To compensate for the time it takes to run these experiments, we
@@ -23,8 +24,8 @@ generations, or space, in the case of low populations, to properly work.
 As mentioned in section \ref{sec:results} our population size was 50 for the 
 experiments which only ran for a couple of hundred generations, and 10 when we 
 wanted the experiments to run for more generations.
-Given more time we would have liked to tweak the NEAT parameters, and not only 
-the evaluation function.
+Given more time we would have liked to tweak the NEAT parameters, such as
+complexification and speciation, and not only the evaluation function.
 
 \subsection{Rag Doll - Ethan}
 While the idea to use a rag doll as part of the evaluation to evaluate the 
