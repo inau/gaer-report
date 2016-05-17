@@ -4,29 +4,30 @@ consider what might have been done differently in order to obtain other results.
 \todo[inline]{more/better introduction}
 
 \subsection{Incremental Evolution}
-An approach to be considered is that of incremental evolution. Incremental 
-evolution would have allowed us to focus on one desired property at a time,
+An approach to be considered is that of incremental evolution. Incremental
+evolution would have allowed us to focus on a subset of desired properties ,
 such as the desired height, or stability. Once a population had been evolved
-which fulfilled the desired property, the fitness function could be modified to
-add another property. 
+which fulfilled the desired properties, the fitness function could be modified
+to add another property. 
 
-Using this approach it is plausible that we would have gotten better results, 
-as the individuals would not have to consider Ethan's resting position, before 
-they had properly evolved to an appropriate height.
+Using this approach it is plausible that we would have gotten better results,
+as the individuals would not have to consider e.g. Ethan's posture, before they
+had evolved to an appropriate height.
+
 \subsection{Simulation Performance}
 Our experiments suffer from the computational cost of simulating physical
 experiments. To compensate for the time it takes to run these experiments, we
 run experiments for only a few hundredths of generations, or with small
 population sizes. This does not allow NEAT enough time, in the case of few 
-generations, or space, in the case of low populations, to properly work.
+generations, or lebensraum, in the case of small populations, to properly work.
 
 As mentioned in section \ref{sec:results} our population size was 50 for the 
 experiments which only ran for a couple of hundred generations, and 10 when we 
 wanted the experiments to run for more generations.
-Given more time we would have liked to tweak the NEAT parameters, and not only 
-the evaluation function.
+Given more time we would have liked to tweak the NEAT parameters, such as
+complexification and speciation, and not only the evaluation function.
 
-\subsection{Rag Doll - Ethan}
+\subsection{Rag Doll - (Ethan)}
 While the idea to use a rag doll as part of the evaluation to evaluate the 
 "chairness" of the individuals is novel, we realised too late that the rag doll 
 we used in our simulations was not as flexible as first assumed.
@@ -35,20 +36,20 @@ Ethan did not bend in his hips and knees, resulting in him not being able to
 actually sit down. This helps explain why the individuals which tried to 
 minimize the $E_{posture}$ term would evolve into shapes as seen on
 figures~\ref{fig:metro_stand}~\&~\ref{fig:chair_legs}, as these individuals 
-show features which help Ethan stand upright. 
+show features which help Ethan stand upright.
 
-It would be nice to do 
-some more experiments where Ethan's flexibility more closely resembled that of 
-a human.
+It would be nice to do some more experiments where Ethan's flexibility more
+closely resembled that of a human.
 
 \subsection{Interactive Evolutionary Computation}
-Our use of IEC differs from that used by Clune and 
-Lipson\cite{Clune:2011:EOG:2078245.2078246}, in that we only prompt the user 
-for input every few generations. In most of our experiments this was roughly 
-every tenth generations.It would be interesting to see what would happen if we 
+Our use of IEC differs from that used by Clune and
+Lipson\cite{Clune:2011:EOG:2078245.2078246}, in that we only prompt the user
+for input every few generations. In most of our experiments this was roughly
+every tenth generations. It would be interesting to see what would happen if we
 instead had prompted the user every generation. 
 
-It would also be interesting to try and combine the above mentioned approach 
-with that of incremental evolution. First one could use only human evaluation 
-to produce a population of individuals with interesting shapes. Then apply the 
-static physical evaluation to evolve the desired physical properties.
+It would also be interesting to try and combine the above mentioned approach
+with that of incremental evolution. First one could use only human evaluation
+to produce a population of individuals with interesting shapes. Then apply the
+static physical evaluation to evolve the desired physical properties, or vice
+versa.
