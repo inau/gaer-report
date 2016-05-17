@@ -1,5 +1,10 @@
-\section{Results} Several experiments were performed using the evaluation
-function mentioned in section \ref{sec:evaluation}. 
+\section{Results}
+\label{sec:results}
+Several experiments were performed using the evaluation
+function mentioned in section \ref{sec:evaluation}. Most of the experiments 
+where carried out with a population size of 50 and a species count of 10. 
+However, in an attempt to reach higher generations, some experiments were 
+carried out using only a population size of 10 and a species count of 2.
 
 Initially the experiments were carried out without the interactive term, $I$,
 and without regard for the mass of the individuals produced by the EC. This
@@ -16,7 +21,8 @@ when Ethan was dropped, see figure~\ref{fig:flat_object}.
 \includegraphics[scale=.5]{flat_chair}
 \caption{The evolved individual, pink, is simply a flat structure, such that
 it does not rotate when Ethan is dropped on it, and has minimal voxel
-count.} \label{fig:flat_object} \end{figure}
+count.} \label{fig:flat_object} 
+\end{figure}
 
 Adding the interactive term, $I$, did not improve significantly on the above
 results. While the selected individual would persist through several
@@ -71,11 +77,11 @@ shapes.
 \begin{figure}[ht]
 	\centering
 	\subfloat[]{
-		\includegraphics[width=.9\columnwidth]{actual_chair}
+		\includegraphics[width=.45\columnwidth]{actual_chair}
 		\label{fig:real_chair}
 	} \hfil
 	\subfloat[]{
-		\includegraphics[height=70pt]{metro_stand}
+		\includegraphics[width=.45\columnwidth]{metro_stand2}
 		\label{fig:metro_stand}
 	}
 	\caption{Viable chairs. While the topmost chair is nothing more than
@@ -85,7 +91,7 @@ shapes.
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=.9\columnwidth]{metro_stand_real}
+	\includegraphics[scale=1]{metro_stand_real}
 	\caption{A metro platform in Copenhagen with a rest stand (encircled)}
 	\label{fig:metro_stand_real}
 \end{figure}
